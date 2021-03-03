@@ -1,0 +1,32 @@
+html, body {
+    margin: 40px auto;
+    max-width: 960px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #222;
+    text-align: center;
+    padding: 0;
+    background-color: #ff8c8c;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+h1 {
+    line-height: 1.2;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 75;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.search {
+
+}
+
+.suggestions {
+
+}
+
+.hl {
+
+}
