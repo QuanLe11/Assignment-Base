@@ -5,7 +5,7 @@
     <title>Casey Manion, Quan Le, and Quest Hollis' Assignment 1 </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="style.css" />
-        
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
 
 </head>
@@ -16,14 +16,13 @@
     <div class = "header">
         <h1>Casey Manion, Quan Le, and Quest Hollis' Assignment 1</h1>
     </div>
-    <div> 
+    <div class="container"> 
         <form class = "">
-            <label for = "zip code">Enter a Zip Code:</label>
-            <input type = "text" id = "fname" class ="searchbox" placeholder="zipcode">    
-
+            <label for="searchbox">Enter a Zip Code/City:</label>
+            <input type="text" id="searchbox" class="searchbox" placeholder="zipcode or city">    
         </form>
-
     </div>
+
 
     <script>
         const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
@@ -69,8 +68,8 @@
         const searchInput = document.querySelector('.search');
         const suggestions = document.querySelector('.suggestions');
 
-        searchhInput.addEventListener('change', displayMatches);
-        searchhInput.addEventListener('keyup', displayMatches);
+        searchInput.addEventListener('change', displayMatches);
+        searchInput.addEventListener('keyup', displayMatches);
         
 
 

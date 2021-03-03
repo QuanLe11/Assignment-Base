@@ -2,7 +2,7 @@ html, body {
     margin: 40px auto;
     max-width: 960px;
     line-height: 1.6;
-    font-size: 18px;
+    font-size: 24px;
     color: #222;
     text-align: center;
     padding: 0;
@@ -12,11 +12,24 @@ html, body {
 
 h1 {
     line-height: 1.2;
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: center;
     font-weight: 75;
     text-transform: uppercase;
     font-family: 'Bebas Neue', sans-serif;
+}
+
+.container {
+    padding: 40px;
+}
+
+label {
+    margin: 5px;
+}
+
+input.searchbox {
+    margin: 5px;
+    text-align: center;
 }
 
 .search {
