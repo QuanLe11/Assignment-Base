@@ -4,16 +4,81 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Casey Manion, Quan Le, and Quest Hollis' Assignment 1 </title>
         <link rel="stylsheet" type="text/css" href="style.css" />
-        <script
-        ></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
 
 </head>
 
 <body>
+
+
     <div class = "header">
         <h1>Casey Manion, Quan Le, and Quest Hollis' Assignment 1</h1>
     </div>
-    <div> </div>
+    <div> 
+        <form class = "">
+            <label for = "zip code">Enter a Zip Code:</label>
+            <input type = "text" id = "fname" class ="searchbox" placeholder="zipcode">    
+
+        </form>
+
+    </div>
+
+    <script>
+        const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
+
+        const zipcodes = [];
+
+        fetch(endpoint)
+            .then(Blob => blob.json())
+            .then(data => zipcodes.push(...data))
+
+        function findMatches(wordToMatch, zipcodes){
+            return zipcodes.filter(place => {
+                const regex = new RegExp(wordToMatch,"gi");
+            return place.zip.match(regex) || place.city.match(regex)
+
+            });
+
+        }
+
+        function displayMatches(){
+            const matchArray = findMatches(this.value, zipcodes);
+            const html = matchArray.map(place => {
+                const regex = new RegExp(this.value, "gi");
+                const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+                const zipCode = place.zip.replace(regex, `<span class="hl">${this.value}</span>`);
+
+                return `
+                    <li>
+                        <span class="name">${place.zip}, ${place.city}</span>
+                        
+                        
+                        
+                    </li>
+
+                    `;
+
+
+            }).join('');
+            suggestions.innerHTML = html;
+
+        }
+
+        const searchInput = document.querySelector('.search');
+        const suggestions = document.querySelector('.suggestions');
+
+        searchhInput.addEventListener('change', displayMatches);
+        searchhInput.addEventListener('keyup', displayMatches);
+        
+
+
+    
+
+    </script>
+
+
+
 </body>
 </html>
 
