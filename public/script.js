@@ -1,6 +1,11 @@
 const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
 const zipcodes = [];
+const searchInput = document.querySelector('#input');
+const suggestions = document.querySelector('.suggestions');
 
+
+// const data = fetch(endpoint);
+// const results = data.json();
 fetch(endpoint)
     .then(blob => blob.json())
     .then(data => zipcodes.push(...data))
@@ -25,6 +30,7 @@ function displayMatches(){
         return `
             <div class="box is-small">
                 <li>
+                    <!-- ADD ADDRESSES -->
                     <div class="name">${restaurantName}</div>
                     <div class="address">${addressLine1}</div>
                     <div class="address">${cityName}, ${zipCode}</div>
@@ -37,8 +43,5 @@ function displayMatches(){
     suggestions.innerHTML = html;
 }
 
-const searchInput = document.querySelector('.input');
-const suggestions = document.querySelector('.suggestions');
-
-searchInput.addEventListener('change', displayMatches);
-searchInput.addEventListener('keyup', displayMatches);
+searchInput.addEventListener('input', displayMatches);
+// searchInput.addEventListener('keyup', displayMatches);
