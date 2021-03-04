@@ -32,6 +32,16 @@ input.searchbox {
     text-align: center;
 }
 
+.suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box {
+    width: 576px;
+}
+
 .address,
 .category,
 .inspection {
