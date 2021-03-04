@@ -23,15 +23,19 @@ function displayMatches(){
         const inspectionResults = place.inspection_results;
         const {category} = place;
         return `
-            <li>
-                <span class="name">${restaurantName}</span>
-                <br>
-                <span class="address">${addressLine1}</span>
-                <br>
-                <span class="category">${category}</span>
-                <br>
-                <span class="inspection result">${inspectionResults}</span>
-            </li>
+            <div class="box is-small">
+                <li>
+                    <span class="name">${restaurantName}</span>
+                    <br>
+                    <span class="address">${addressLine1}</span>
+                    <br>
+                    <span class="address">${cityName}, ${zipCode}</span>
+                    </br>
+                    <span class="category">${category}</span>
+                    <br>
+                    <span class="inspection result">${inspectionResults}</span>
+                </li>
+            </div>
             `;
     }).join('');
     suggestions.innerHTML = html;
