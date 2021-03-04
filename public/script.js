@@ -16,8 +16,8 @@ function displayMatches(){
     const matchArray = findMatches(this.value, zipcodes);
     const html = matchArray.map(place => {
         const regex = new RegExp(this.value, "gi");
-        const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
-        const zipCode = place.zip.replace(regex, `<span class="hl">${this.value}</span>`);
+        const cityName = place.city;
+        const zipCode = place.zip;
         const addressLine1 = place.address_line_1;
         const restaurantName = place.name;
         const inspectionResults = place.inspection_results;
@@ -25,15 +25,11 @@ function displayMatches(){
         return `
             <div class="box is-small">
                 <li>
-                    <span class="name">${restaurantName}</span>
-                    <br>
-                    <span class="address">${addressLine1}</span>
-                    <br>
-                    <span class="address">${cityName}, ${zipCode}</span>
-                    </br>
-                    <span class="category">${category}</span>
-                    <br>
-                    <span class="inspection result">${inspectionResults}</span>
+                    <div class="name">${restaurantName}</div>
+                    <div class="address">${addressLine1}</div>
+                    <div class="address">${cityName}, ${zipCode}</div>
+                    <div class="category">${category}</div>
+                    <div class="inspection result">${inspectionResults}</div>
                 </li>
             </div>
             `;
