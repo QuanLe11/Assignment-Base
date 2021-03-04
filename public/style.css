@@ -40,6 +40,14 @@ input.searchbox {
 
 .box {
     width: 576px;
+    background: linear-gradient(0deg, rgb(252, 246, 162) 0%, rgb(255, 178, 11) 100%);
+}
+
+.name,
+.address,
+.category,
+.inspection {
+    color: #000;
 }
 
 .address,
