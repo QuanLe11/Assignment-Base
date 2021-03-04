@@ -45,8 +45,9 @@ input.searchbox {
 }
 
 .name {
-    font-weight: bold;
     font-size: 30px;
+    font-weight: bold;
+    color: #111;
 }
 
 .address,
@@ -54,4 +55,5 @@ input.searchbox {
 .inspection {
     font-size: 15px;
     font-weight: lighter;
+    color: #111;
 }
