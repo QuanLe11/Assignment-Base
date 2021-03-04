@@ -1,5 +1,5 @@
 html, body {
-    margin: 40px auto;
+    margin: 25px auto;
     max-width: 960px;
     line-height: 1.6;
     font-size: 24px;
@@ -30,4 +30,10 @@ label {
 input.searchbox {
     margin: 5px;
     text-align: center;
+}
+
+.address,
+.category,
+.inspection {
+    font-size: 16px;
 }
