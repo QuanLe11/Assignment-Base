@@ -51,13 +51,17 @@
                 const regex = new RegExp(this.value, "gi");
                 const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
                 const zipCode = place.zip.replace(regex, `<span class="hl">${this.value}</span>`);
+                // add const name, category, address
+
 
                 return `
                     <li>
-                        <span class="name">${place.zip}, ${place.city}</span>
-                        
-                        
-                        
+                        <div class="suggestions li">
+                            <span class="name">${place.name}</span><br/>
+                            <span class="name">${place.category}</span><br/>
+                            <span class="name">${place.address}</span><br/>
+                            <span class="name">${place.city}, ${place.zip}</span><br/>
+                        </div>
                     </li>
 
                     `;
