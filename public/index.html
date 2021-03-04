@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class = "header">
+    <div class="header">
         <h1>Casey Manion, Quan Le, and Quest Hollis' Assignment 1</h1>
     </div>
 
@@ -33,7 +33,7 @@
         const zipcodes = [];
 
         fetch(endpoint)
-            .then(Blob => blob.json())
+            .then(blob => blob.json())
             .then(data => zipcodes.push(...data))
 
         function findMatches(wordToMatch, zipcodes){
