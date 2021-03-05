@@ -1,4 +1,4 @@
-// async function use instead of then promsie chains (which creates race condition)
+// async function used instead of promise chains (which creates race condition)
 async function windowActions() {
     // API PG County Food Inspection data
     const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
@@ -52,5 +52,5 @@ async function windowActions() {
     });
 }
 
-// function call to aysnc windowAction function
+// function call to async function windowActions
 window.onload = windowActions;
