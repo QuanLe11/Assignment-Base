@@ -1,17 +1,16 @@
+// async function use instead of then promsie chains (which creates race condition)
 async function windowActions() {
+    // API PG County Food Inspection data
     const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
     const searchInput = document.querySelector('#input');
     const suggestions = document.querySelector('.suggestions');
     
-    
-    // const data = fetch(endpoint);
-    // const results = data.json();
+    // fetch request
     const request = await fetch(endpoint)
-        // .then(blob => blob.json())
-        // .then(data => zipcodes.push(...data))
-
+    // empty array for data
     const zipcodes = await request.json();
     
+    // check for matches using input box compared to zipcodes array
     function findMatches(wordToMatch, zipcodes) {
         return zipcodes.filter(place => {
         const regex = new RegExp(wordToMatch, "gi");
@@ -19,6 +18,7 @@ async function windowActions() {
         });
     }
     
+    // display matches found
     function displayMatches(event) {
         const matchArray = findMatches(event.target.value, zipcodes);
         const html = matchArray.map(place => {
@@ -35,8 +35,8 @@ async function windowActions() {
                     <li>
                         <div class="name">${restaurantName}</div>
                         <div class="category">${category}</div>
-                        <div class="address">${addressLine1}, ${addressLine2}</div>
-                        <div class="address">${cityName}, ${zipCode}</div>
+                        <address class="address">${addressLine1}, ${addressLine2}</address>
+                        <address class="address">${cityName}, ${zipCode}</address>
                         <div class="inspection result">${inspectionResults}</div>
                     </li>
                 </div>
@@ -45,10 +45,12 @@ async function windowActions() {
         suggestions.innerHTML = html;
     }
     
+    // event listeners
     searchInput.addEventListener('input', displayMatches);
     searchInput.addEventListener('keyup', (evt) => {
         displayMatches(evt)
     });
 }
 
+// function call to aysnc windowAction function
 window.onload = windowActions;

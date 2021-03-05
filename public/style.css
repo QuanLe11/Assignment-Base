@@ -1,3 +1,4 @@
+/* customized main elements */
 html, body {
     margin: 25px auto;
     max-width: 960px;
@@ -19,6 +20,7 @@ h1 {
     font-family: 'Bebas Neue', sans-serif;
 }
 
+/* body element customizations */
 .container {
     padding: 40px;
 }
@@ -32,6 +34,7 @@ input.searchbox {
     text-align: center;
 }
 
+/* typeahead suggestion box customizations */
 .suggestions {
     display: flex;
     flex-wrap: wrap;
@@ -44,6 +47,7 @@ input.searchbox {
     background: linear-gradient(0deg, rgb(252, 246, 162) 0%, rgb(255, 178, 11) 100%);
 }
 
+/* suggestion box font customizations */
 .name {
     font-size: 30px;
     font-weight: bold;
